@@ -9,9 +9,9 @@ int main () {
     const int screenHeight = 500;
     int ballX = 100;
     int ballY = 100;
-    int ball_speed_x = 5;
-    int ball_speed_y = 5;
-    int ball_radius = 15;
+    int ballSpeedX = 5;
+    int ballSpeedY = 5;
+    int ballRadius = 15;
 
     InitWindow(screenWidth, screenHeight, "My first Pong program!");
     SetTargetFPS(60);
@@ -19,20 +19,20 @@ int main () {
     while (WindowShouldClose() == false){
         BeginDrawing();
         ClearBackground(BLACK);
-        ballX += ball_speed_x;
-        ballY += ball_speed_y;
+        ballX += ballSpeedX;
+        ballY += ballSpeedY;
 
-        if(ballX + ball_radius >= screenWidth  || ballX - ball_radius <= 0)
+        if(ballX + ballRadius >= screenWidth  || ballX - ballRadius <= 0)
         {
-            ball_speed_x *= -1;
+            ballSpeedX *= -1;
         }
 
-        if(ballY + ball_radius >= screenHeight  || bally - ball_radius <= 0)
+        if(ballY + ballRadius >= screenHeight  || bally - ballRadius <= 0)
         {
-            ball_speed_y *= -1;
+            ballSpeedY *= -1;
         }
 
-        DrawCircle(ballX,ballY,ball_radius, WHITE);
+        DrawCircle(ballX,ballY,ballRadius, WHITE);
         EndDrawing();
     }
 
